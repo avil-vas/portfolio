@@ -8,19 +8,19 @@ export default function Certifications() {
       title: 'Introduction to NoSQL Databases',
       issuer: 'Infosys Springboard',
       date: 'Sep 2025',
-      verifyUrl: 'https://verify.onwingspan.com'
+      verifyUrl: '/4SO23CS046_AvilVas.pdf'
     },
     {
       title: 'Advanced Data Structures & Algorithms in Java: Sorting & Searching Algorithms',
       issuer: 'Infosys Springboard',
       date: 'Feb 2025',
-      verifyUrl: 'https://verify.onwingspan.com'
+      verifyUrl: '/dsa.pdf'
     },
     {
       title: 'Privacy and Security in Online Social Media',
       issuer: 'NPTEL, IIIT Hyderabad',
       date: 'Oct 2025',
-      verifyUrl: null
+      verifyUrl: '/Privacy and Security in Online Social Media (2).pdf'
     }
   ];
 

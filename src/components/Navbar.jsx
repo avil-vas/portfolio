@@ -12,6 +12,7 @@ export default function Navbar({ isLightTheme, toggleTheme }) {
     { label: 'About', target: 'about' },
     { label: 'Skills', target: 'skills' },
     { label: 'Projects', target: 'projects' },
+    { label: 'Achievements', target: 'achievements' },
     { label: 'Certifications', target: 'certifications' },
     { label: 'Contact', target: 'contact' },
   ];

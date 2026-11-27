@@ -1,5 +1,20 @@
 import React from 'react';
 import { Code, Cpu, Wrench } from 'lucide-react';
+import {
+  siExpress,
+  siGit,
+  siGithub,
+  siJavascript,
+  siMongodb,
+  siMysql,
+  siNextdotjs,
+  siOpenjdk,
+  siPostman,
+  siPython,
+  siReact,
+  siTailwindcss,
+  siVercel
+} from 'simple-icons';
 import './Skills.css';
 
 export default function Skills() {
@@ -9,9 +24,9 @@ export default function Skills() {
       icon: <Code size={24} />,
       color: 'var(--primary)',
       skills: [
-        { name: 'JavaScript', level: 90 },
-        { name: 'Python', level: 85 },
-        { name: 'Java', level: 75 }
+        { name: 'JavaScript', logos: [siJavascript] },
+        { name: 'Python', logos: [siPython] },
+        { name: 'Java', logos: [siOpenjdk] }
       ]
     },
     {
@@ -19,24 +34,22 @@ export default function Skills() {
       icon: <Cpu size={24} />,
       color: 'var(--secondary)',
       skills: [
-        { name: 'React.js', level: 90 },
-        { name: 'Next.js', level: 80 },
-        { name: 'Express.js', level: 85 },
-        { name: 'Tailwind CSS', level: 95 },
-        { name: 'MongoDB', level: 85 },
-        { name: 'MySQL', level: 80 }
+        { name: 'React.js', logos: [siReact] },
+        { name: 'Next.js', logos: [siNextdotjs] },
+        { name: 'Express.js', logos: [siExpress] },
+        { name: 'Tailwind CSS', logos: [siTailwindcss] },
+        { name: 'MongoDB', logos: [siMongodb] },
+        { name: 'MySQL', logos: [siMysql] }
       ]
     },
     {
-      title: 'Tools & DevOps',
+      title: 'Tools',
       icon: <Wrench size={24} />,
       color: 'var(--accent)',
       skills: [
-        { name: 'Git & GitHub', level: 90 },
-        { name: 'Docker', level: 70 },
-        { name: 'Kubernetes', level: 60 },
-        { name: 'Vercel', level: 85 },
-        { name: 'Postman', level: 80 }
+        { name: 'Git & GitHub', logos: [siGit, siGithub] },
+        { name: 'Vercel', logos: [siVercel] },
+        { name: 'Postman', logos: [siPostman] }
       ]
     }
   ];
@@ -46,7 +59,7 @@ export default function Skills() {
       <div className="container">
         <div className="section-title animate-slide-up">
           <h2>My Skills</h2>
-          <p>Technical proficiencies categorized by programming language, development frameworks, and DevOps tools.</p>
+          <p>Technical proficiencies categorized by programming language, development frameworks, and tools.</p>
         </div>
 
         <div className="skills-grid grid-3">
@@ -62,19 +75,24 @@ export default function Skills() {
               <div className="skills-list">
                 {category.skills.map((skill, sIdx) => (
                   <div key={sIdx} className="skill-item">
-                    <div className="skill-info">
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-percentage">{skill.level}%</span>
-                    </div>
-                    <div className="skill-bar-track">
-                      <div 
-                        className="skill-bar-fill" 
-                        style={{ 
-                          width: `${skill.level}%`, 
-                          background: `linear-gradient(to right, ${category.color}, var(--secondary))` 
-                        }}
-                      ></div>
-                    </div>
+                    <span className="skill-logos" aria-hidden="true">
+                      {skill.logos.map((logo) => (
+                        <svg
+                          key={logo.title}
+                          className="skill-logo"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          style={{
+                            color: ['000000', '0A0A0A', '181717'].includes(logo.hex)
+                              ? 'var(--text-primary)'
+                              : `#${logo.hex}`
+                          }}
+                        >
+                          <path d={logo.path} />
+                        </svg>
+                      ))}
+                    </span>
+                    <span className="skill-name">{skill.name}</span>
                   </div>
                 ))}
               </div>

@@ -11,9 +11,10 @@ export default function Projects() {
       id: 1,
       title: 'Campus Complaint Tracker',
       category: 'Full Stack / AI',
-      tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini API', 'JWT'],
+      tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini API', 'JWT', 'Tailwind CSS'],
       brief: 'Full-stack application streamlining student complaints routing using Google Gemini for automated ticket classification.',
-      github: 'https://github.com/avil-vas/campus-complaint-tracker',
+      github: 'https://github.com/avil-vas/complaint-tracker',
+      liveUrl: 'https://complaint-tracker-frontend-pvgh.onrender.com/',
       bullets: [
         'Built a full-stack web application to streamline student complaint submission, routing, and management across departments.',
         'Integrated Google Gemini 2.5 Flash API to automatically classify complaints by category, department, priority, and sentiment with a local keyword-based fallback system.',
@@ -25,9 +26,9 @@ export default function Projects() {
       id: 2,
       title: 'Wanderlust Listing Platform',
       category: 'Full Stack MERN',
-      tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Mapbox GL', 'Cloudinary'],
+      tags: ['Node.js', 'Express', 'MongoDB', 'EJS', 'Mapbox', 'Cloudinary', 'React'],
       brief: 'Accommodation marketplace featuring interactive geolocation mapping and secure role-based listing ownership.',
-      github: 'https://github.com/avil-vas/wanderlust',
+      github: 'https://github.com/avil-vas/airbnb',
       bullets: [
         'Developed a full-stack accommodation listing application inspired by travel rental platforms, supporting CRUD operations for listings and reviews.',
         'Integrated Mapbox GL JS for geolocation and interactive map display of listings, and Cloudinary for cloud-based image upload and storage via Multer.',
@@ -37,16 +38,16 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: 'Network Event Scheduler & Dashboard',
-      category: 'Full Stack MERN',
-      tags: ['React', 'Vite', 'Tailwind CSS v4', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Nodemailer'],
-      brief: 'Infrastructure planning dashboard with secure OTP validation, dynamic scheduling blocks, and network health widgets.',
-      github: 'https://github.com/avil-vas/network-event-scheduler',
+      title: 'AI-Powered Fashion E-Commerce Platform',
+      category: 'Full Stack / AI',
+      tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini API', 'JWT'],
+      brief: 'Full-stack fashion store with personalized AI product discovery, dynamic shopping features, and secure checkout.',
+      github: 'https://github.com/avil-vas/ecommerce',
       bullets: [
-        'Built a MERN application for IT admins to manage client networks, schedule maintenance events, and monitor device loads across distributed infrastructure.',
-        'Implemented secure authentication with Bcrypt password hashing, JWT-based HTTP-only cookies, OTP email verification via Nodemailer/Brevo SMTP, and forgot-password recovery.',
-        'Developed a dynamic event scheduler preventing past bookings, with real-time dashboards showing active, upcoming, and historical network events with live KPI metrics.',
-        'Engineered protected routing using React Router DOM and Context API for global session management, with safeguards preventing network deletion when pending events exist.'
+        'Built a full-stack fashion store with 100+ products, featuring dynamic filters, cart, wishlist, and order placement with server-side stock and price validation.',
+        'Integrated a Gemini AI shopping assistant that queries the live product database in real time, showing in-stock results as interactive product cards in the chat UI.',
+        'Engineered resilient API handling with automatic retries for Gemini 503/429 errors and a keyword-search fallback, so the chat never crashes or hangs when Gemini is unavailable.',
+        'Secured the platform with bcrypt password hashing, JWT authentication, and role-based access control (admin-only routes).'
       ]
     }
   ];
@@ -87,6 +88,18 @@ export default function Projects() {
                     >
                       <Github size={20} />
                     </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link-icon"
+                        aria-label={`Live demo for ${project.title}`}
+                        title="Live Demo"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
